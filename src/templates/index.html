@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Registrar</title>
+    <title>Sistema de Empleados</title>
 </head>
 
 <body>
@@ -13,7 +13,29 @@
     <header id="header"></header>
 
     <main>
-        <h1>Hola mundo</h1>
+        <h1>Hola FLASK</h1>
+        <div>
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Foto</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                </tr>
+                <tbody>
+                    {% for empleado in empleados %}
+
+                    <tr>
+                        <td>{{empleado[0]}}</td>
+                        <td>{{empleado[3]}}</td>
+                        <td>{{empleado[1]}}</td>
+                        <td>{{empleado[2]}}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <footer></footer>
