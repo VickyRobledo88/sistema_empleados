@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from flask import render_template,request,redirect, send_from_directory
+from flask import render_template,request,redirect, send_from_directory, url_for, send_from_directory
 from flaskext.mysql import MySQL
 import datetime
 
@@ -16,6 +16,10 @@ UPLOADS=os.path.join('src/uploads')
 app.config['UPLOADS'] = UPLOADS #guardamos la ruta como un valor de la app
 
 mysql.init_app(app)
+
+@app.route('/fotodeusuario/<path:nombreFoto>')
+def uploads (nombreFoto):
+    return send_from_directory(os.path.join('uploads'),nombreFoto)
 
 @app.route('/')
 def index():
